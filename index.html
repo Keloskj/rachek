@@ -354,8 +354,8 @@
 
         // Aggiorna posizione
         function updateCursor() {
-            posX += (mouseX - posX) * 0.1;
-            posY += (mouseY - posY) * 0.1;
+            posX += (mouseX - posX) * 0.5;
+            posY += (mouseY - posY) * 0.5;
 
             cursor.style.left = posX + 'px';
             cursor.style.top = posY + 'px';
