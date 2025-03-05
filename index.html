@@ -245,3 +245,155 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Cursor</title>
+    <style>
+        /* Nascondi il cursore di default */
+        body {
+            cursor: none;
+            margin: 0;
+            overflow-x: hidden;
+            background: #f0f0f0;
+        }
+
+        /* Cursore principale */
+        .cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: 
+                width 0.3s ease,
+                height 0.3s ease,
+                background 0.3s ease;
+            filter: url(#goo);
+            z-index: 9999;
+        }
+
+        /* Effetto 'follower' */
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 107, 107, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: 
+                all 0.1s ease-out,
+                width 0.3s ease,
+                height 0.3s ease;
+        }
+
+        /* Effetto hover */
+        a, .project-item {
+            transition: transform 0.3s ease;
+        }
+
+        a:hover, .project-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* SVG filter per l'effetto liquido */
+        svg {
+            display: none;
+        }
+
+        /* Stati del cursore */
+        .cursor.active {
+            width: 60px;
+            height: 60px;
+            background: #4ecdc4;
+        }
+
+        .cursor-follower.active {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Filtro SVG per effetto goo -->
+    <svg>
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="
+                    1 0 0 0 0  
+                    0 1 0 0 0  
+                    0 0 1 0 0  
+                    0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Elementi del cursore -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Contenuto della pagina -->
+    <div class="main-content">
+        <!-- Inserisci qui il tuo contenuto esistente -->
+    </div>
+
+    <script>
+        // Animazione del cursore
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        let posX = 0, posY = 0;
+        let mouseX = 0, mouseY = 0;
+
+        // Aggiorna posizione
+        function updateCursor() {
+            posX += (mouseX - posX) * 0.1;
+            posY += (mouseY - posY) * 0.1;
+
+            cursor.style.left = posX + 'px';
+            cursor.style.top = posY + 'px';
+            
+            follower.style.left = posX + 'px';
+            follower.style.top = posY + 'px';
+
+            requestAnimationFrame(updateCursor);
+        }
+
+        // Rileva movimento mouse
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Interazioni hover
+        document.querySelectorAll('a, .project-item, button').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                follower.classList.add('active');
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                follower.classList.remove('active');
+            });
+        });
+
+        // Avvia animazione
+        updateCursor();
+
+        // Disabilita su mobile
+        if ('ontouchstart' in window) {
+            cursor.style.display = 'none';
+            follower.style.display = 'none';
+            document.body.style.cursor = 'auto';
+        }
+    </script>
+</body>
+</html>
