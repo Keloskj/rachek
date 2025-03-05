@@ -57,7 +57,6 @@
             position: fixed;
             width: 100%;
             padding: 30px 5%;
-            font-size: 3.5rem
             background: rgba(255,255,255,0.9);
             backdrop-filter: blur(10px);
             z-index: 100;
@@ -65,24 +64,23 @@
             height: auto;
         }
 
-.header-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-      .col-1 { grid-column: span 1; }
-.col-2 { grid-column: span 2; }
-.col-3 { grid-column: span 3; }
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
+        .header-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-}
-        
-         .logo {
+        .col-1 { grid-column: span 1; }
+        .col-2 { grid-column: span 2; }
+        .col-3 { grid-column: span 3; }
+        .col-4 { grid-column: span 4; }
+        .col-5 { grid-column: span 5; }
+        .col-6 { grid-column: span 6; }
+
+        .logo {
             font-weight: bold;
             text-decoration: none;
             color: black;
@@ -98,27 +96,28 @@
             text-align: center;
             align-self: center;
             justify-self: center;
-}
+        }
 
         nav {
             display: flex;
             justify-content: flex-end;
             gap: 40px;
             align-self: center;
-}
+        }
 
         nav a {
             margin-left: 0;
             font-size: 1.8rem;
             transition: opacity 0.3s ease;
             position: relative;
+            text-decoration: none;
+            color: #000000;
         }
 
-        /* Mantieni hover sugli altri link */
-nav a:not(.search-button):hover {
-    opacity: 0.7;
-}
-       
+        nav a:hover {
+            opacity: 0.7;
+        }
+
         main {
             padding-top: 200px;
         }
@@ -240,18 +239,34 @@ nav a:not(.search-button):hover {
 
         /* 6. Responsive Design */
         @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
+            .header-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
+                grid-column: span 1;
+            }
+            
+            nav {
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .logo, .header-center {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .header-center {
+                font-size: 1.4rem;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
                 padding: 0 20px;
                 gap: 20px;
-            }
-            
-            .splash-logo {
-                width: 800px;
             }
         }
     </style>
@@ -266,8 +281,8 @@ nav a:not(.search-button):hover {
     <div class="main-content">
         <header>
             <div class="header-grid">
-                <a href="/" class="logo">Rachele Tozzini</a>
-                <div class="header-center">Art & Product Design</div>
+                <a href="/" class="logo col-2">Rachele Tozzini</a>
+                <div class="header-center col-2">Art & Product Design</div>
                 <nav class="col-2">
                     <a href="/work">Work</a>
                     <a href="/about">Info</a>
@@ -278,7 +293,6 @@ nav a:not(.search-button):hover {
        
         <main>
             <div class="projects-grid">
-                <!-- Progetto 1 -->
                 <div class="project-item">
                     <img src="gaia per sitopng.png" alt="Project 1" class="project-image">
                     <div class="project-info">
@@ -286,7 +300,6 @@ nav a:not(.search-button):hover {
                         <p class="project-category">Art</p>
                     </div> 
                 </div>
-                <!-- Altri progetti... -->
             </div>
         </main>
     </div>
@@ -306,7 +319,6 @@ nav a:not(.search-button):hover {
         </defs>
     </svg>
 
-    <!-- Elementi del cursore -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
@@ -338,7 +350,7 @@ nav a:not(.search-button):hover {
             mouseY = e.clientY;
         });
 
-        document.querySelectorAll('a, .project-item, button').forEach(link => {
+        document.querySelectorAll('a, .project-item').forEach(link => {
             link.addEventListener('mouseenter', () => {
                 cursor.classList.add('active');
                 follower.classList.add('active');
@@ -358,7 +370,6 @@ nav a:not(.search-button):hover {
             document.body.style.cursor = 'auto';
         }
 
-        // Resto dello script esistente...
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.querySelector('.splash').classList.add('hide');
