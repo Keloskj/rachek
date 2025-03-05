@@ -41,3 +41,19 @@ footer {
     padding: 20px;
     background-color: white;
 }
+/* Mantieni hover sugli altri link */
+nav a:not(.search-button):hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        margin-left: 15px;
+        font-size: 1em;
+    }
+    
+    .search-button {
+        margin-left: 10px !important;
+        padding: 6px 10px;
+    }
+}
