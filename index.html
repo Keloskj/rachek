@@ -121,3 +121,72 @@
     </main>
 </body>
 </html>
+<!-- Aggiungi questi stili al tag <style> -->
+<style>
+    /* Animazioni avanzate */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .project-item {
+        perspective: 1000px;
+    }
+
+    .project-image {
+        transform: scale(1.02);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .project-item:hover .project-image {
+        transform: scale(1.1) rotateZ(1deg);
+    }
+
+    .project-info {
+        clip-path: inset(0 100% 0 0);
+        transition: all 0.4s 0.1s ease-out;
+    }
+
+    .project-item:hover .project-info {
+        clip-path: inset(0);
+    }
+</style>
+
+<!-- Aggiungi questo JavaScript prima della chiusura </body> -->
+<script>
+    // Animazioni al scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // Effetto parallax al mouse
+    document.querySelectorAll('.project-item').forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            const x = e.clientX - item.getBoundingClientRect().left;
+            const y = e.clientY - item.getBoundingClientRect().top;
+            
+            item.style.transform = `
+                rotateX(${(y - item.offsetHeight/2) / 15}deg)
+                rotateY(${-(x - item.offsetWidth/2) / 15}deg)
+            `;
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'rotateX(0) rotateY(0)';
+        });
+    });
+</script>
