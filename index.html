@@ -250,7 +250,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morphing Liquid Cursor</title>
+    <title>Geometric Morphing Cursor</title>
     <style>
         body {
             cursor: none;
@@ -260,58 +260,51 @@
             overflow-x: hidden;
         }
 
-        .morph-cursor {
+        .geo-cursor {
             position: fixed;
             width: 40px;
             height: 40px;
-            background: #ff6b6b;
+            background: #4ecdc4;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            filter: url(#goo);
             transition: 
-                width 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-                height 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-                border-radius 0.4s ease;
-            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 10% 60%, 20% 20%);
+                all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                clip-path 0.6s ease;
+            filter: url(#goo);
             z-index: 9999;
         }
 
-        /* Forme dinamiche */
-        .morph-cursor.moving {
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 70% 70%, 30% 70%, 0% 30%);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            width: 45px;
-            height: 35px;
+        /* Forme geometriche */
+        .geo-cursor.circle {
+            clip-path: circle(50% at 50% 50%);
+            border-radius: 50%;
         }
 
-        .morph-cursor.fast {
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            width: 50px;
-            height: 30px;
+        .geo-cursor.square {
+            clip-path: inset(0% 0% 0% 0%);
+            border-radius: 5%;
         }
 
-        /* Filtro SVG per effetto liquido */
+        .geo-cursor.triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-radius: 10%;
+        }
+
+        /* Effetto liquido */
         svg {
             display: none;
         }
 
-        @keyframes fluid-motion {
-            0% { border-radius: 40% 60% 60% 40% / 60% 45% 55% 40%; }
-            50% { border-radius: 55% 45% 65% 35% / 45% 55% 45% 55%; }
-            100% { border-radius: 40% 60% 60% 40% / 60% 45% 55% 40%; }
-        }
-
-        .morph-cursor::after {
+        /* Stati movimento */
+        .geo-cursor::after {
             content: '';
             position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            background: rgba(255, 107, 107, 0.4);
-            border-radius: inherit;
-            animation: fluid-motion 3s infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(78, 205, 196, 0.3);
+            transition: inherit;
         }
     </style>
 </head>
@@ -321,17 +314,17 @@
         <defs>
             <filter id="goo">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                <feColorMatrix in="blur" type="matrix" values="
-                    1 0 0 0 0  
-                    0 1 0 0 0  
-                    0 0 1 0 0  
-                    0 0 0 18 -7" />
+                <feColorMatrix in="blur" type="matrix" 
+                    values="1 0 0 0 0  
+                            0 1 0 0 0  
+                            0 0 1 0 0  
+                            0 0 0 18 -7" />
             </filter>
         </defs>
     </svg>
 
     <!-- Cursore -->
-    <div class="morph-cursor"></div>
+    <div class="geo-cursor circle"></div>
 
     <!-- Contenuto -->
     <div class="main-content">
@@ -339,35 +332,43 @@
     </div>
 
     <script>
-        const cursor = document.querySelector('.morph-cursor');
+        const cursor = document.querySelector('.geo-cursor');
         let lastX = 0;
         let lastY = 0;
-        let velocity = 0;
-        let timeout;
+        let lastTime = Date.now();
+        let currentShape = 'circle';
+
+        // Mappe velocità-forma
+        const speedMap = [
+            { max: 2, shape: 'circle' },      // Statico
+            { max: 10, shape: 'triangle' },   // Medio
+            { max: Infinity, shape: 'square' } // Veloce
+        ];
 
         // Rilevamento movimento
         document.addEventListener('mousemove', (e) => {
             const now = Date.now();
+            const deltaTime = now - lastTime;
             const deltaX = e.clientX - lastX;
             const deltaY = e.clientY - lastY;
-            velocity = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            
+            const distance = Math.sqrt(deltaX**2 + deltaY**2);
+            const speed = distance / (deltaTime || 1);
+
             // Aggiorna posizione
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-            
-            // Controllo velocità
-            if(velocity > 2) {
-                cursor.classList.add('moving');
-                if(velocity > 10) cursor.classList.add('fast');
-                clearTimeout(timeout);
-                timeout = setTimeout(() => {
-                    cursor.classList.remove('moving', 'fast');
-                }, 100);
+
+            // Determina forma
+            const newShape = speedMap.find(s => speed < s.max).shape;
+            if(newShape !== currentShape) {
+                cursor.classList.remove(currentShape);
+                cursor.classList.add(newShape);
+                currentShape = newShape;
             }
 
             lastX = e.clientX;
             lastY = e.clientY;
+            lastTime = now;
         });
 
         // Disabilitazione mobile
