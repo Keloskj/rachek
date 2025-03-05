@@ -250,129 +250,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geometric Morphing Cursor</title>
+    <title>Liquid Drop Cursor</title>
     <style>
         body {
             cursor: none;
             margin: 0;
             min-height: 100vh;
             background: #1a1a1a;
-            overflow-x: hidden;
         }
 
-        .geo-cursor {
+        .liquid-cursor {
             position: fixed;
-            width: 40px;
-            height: 40px;
-            background: #4ecdc4;
+            width: 32px;
+            height: 32px;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            transition: 
-                all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-                clip-path 0.6s ease;
             filter: url(#goo);
             z-index: 9999;
+            transition: 
+                width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Forme geometriche */
-        .geo-cursor.circle {
-            clip-path: circle(50% at 50% 50%);
+        .liquid-cursor::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff6b6b;
             border-radius: 50%;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            animation: pulse 2s infinite;
         }
 
-        .geo-cursor.square {
-            clip-path: inset(0% 0% 0% 0%);
-            border-radius: 5%;
+        .liquid-cursor::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b33;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            filter: blur(5px);
         }
 
-        .geo-cursor.triangle {
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            border-radius: 10%;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        /* Effetto liquido */
+        /* Gooey Effect */
         svg {
             display: none;
         }
 
-        /* Stati movimento */
-        .geo-cursor::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(78, 205, 196, 0.3);
-            transition: inherit;
+        /* Hover States */
+        a, button, .hover-target {
+            transition: transform 0.3s ease;
+        }
+
+        a:hover, button:hover, .hover-target:hover {
+            transform: scale(1.05);
+        }
+
+        .liquid-cursor.hover {
+            width: 48px;
+            height: 48px;
+            animation: hoverPulse 0.8s infinite;
+        }
+
+        @keyframes hoverPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
         }
     </style>
 </head>
 <body>
-    <!-- Filtro SVG -->
+    <!-- SVG Filter -->
     <svg>
         <defs>
             <filter id="goo">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                <feColorMatrix in="blur" type="matrix" 
-                    values="1 0 0 0 0  
-                            0 1 0 0 0  
-                            0 0 1 0 0  
-                            0 0 0 18 -7" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    1 0 0 0 0  
+                    0 1 0 0 0  
+                    0 0 1 0 0  
+                    0 0 0 18 -7" />
+                <feComposite in="SourceGraphic" operator="atop" />
             </filter>
         </defs>
     </svg>
 
-    <!-- Cursore -->
-    <div class="geo-cursor circle"></div>
+    <!-- Liquid Cursor -->
+    <div class="liquid-cursor"></div>
 
-    <!-- Contenuto -->
+    <!-- Page Content -->
     <div class="main-content">
         <!-- Il tuo contenuto qui -->
     </div>
 
     <script>
-        const cursor = document.querySelector('.geo-cursor');
-        let lastX = 0;
-        let lastY = 0;
-        let lastTime = Date.now();
-        let currentShape = 'circle';
+        const cursor = document.querySelector('.liquid-cursor');
+        let mouseX = 0, mouseY = 0;
+        let posX = 0, posY = 0;
+        let velocity = 0;
 
-        // Mappe velocità-forma
-        const speedMap = [
-            { max: 2, shape: 'circle' },      // Statico
-            { max: 10, shape: 'triangle' },   // Medio
-            { max: Infinity, shape: 'square' } // Veloce
-        ];
-
-        // Rilevamento movimento
+        // Mouse movement
         document.addEventListener('mousemove', (e) => {
-            const now = Date.now();
-            const deltaTime = now - lastTime;
-            const deltaX = e.clientX - lastX;
-            const deltaY = e.clientY - lastY;
-            const distance = Math.sqrt(deltaX**2 + deltaY**2);
-            const speed = distance / (deltaTime || 1);
-
-            // Aggiorna posizione
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-
-            // Determina forma
-            const newShape = speedMap.find(s => speed < s.max).shape;
-            if(newShape !== currentShape) {
-                cursor.classList.remove(currentShape);
-                cursor.classList.add(newShape);
-                currentShape = newShape;
-            }
-
-            lastX = e.clientX;
-            lastY = e.clientY;
-            lastTime = now;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
 
-        // Disabilitazione mobile
-        if('ontouchstart' in window) {
+        // Physics-based animation
+        function animate() {
+            const deltaX = mouseX - posX;
+            const deltaY = mouseY - posY;
+            
+            // Fluid movement calculation
+            velocity = Math.sqrt(deltaX * deltaX + deltaY * deltaY) * 0.03;
+            posX += deltaX * 0.15 + (Math.random() - 0.5) * velocity;
+            posY += deltaY * 0.15 + (Math.random() - 0.5) * velocity;
+
+            cursor.style.left = posX + 'px';
+            cursor.style.top = posY + 'px';
+
+            requestAnimationFrame(animate);
+        }
+
+        // Hover effects
+        document.querySelectorAll('a, button, .hover-target').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Start animation
+        animate();
+
+        // Mobile check
+        if ('ontouchstart' in window) {
             cursor.style.display = 'none';
             document.body.style.cursor = 'auto';
         }
