@@ -1,0 +1,125 @@
+<head>
+<style class="vjs-styles-defaults"> 
+.video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+      <style class="vjs-styles-dimensions">…</style>
+            .vjs_video_344-dimensions {
+        width: 1818px;
+        height: 1023px;
+      }
+
+      .vjs_video_344-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+      <style class="vjs-styles-dimensions">
+            .vjs_video_272-dimensions {
+        width: 1897px;
+        height: 773px;
+      }
+
+      .vjs_video_272-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+      <style class="vjs-styles-dimensions">
+            .vjs_video_140-dimensions {
+        width: 1897px;
+        height: 773px;
+      }
+
+      .vjs_video_140-dimensions.vjs-fluid {
+        padding-top: 46.875%;
+      }
+      <style class="vjs-styles-dimensions">
+            .vjs_video_108-dimensions {
+        width: 1897px;
+        height: 773px;
+      }
+
+      .vjs_video_108-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+      <style class="vjs-styles-dimensions">
+            .vjs_video_3-dimensions {
+        width: 1897px;
+        height: 773px;
+      }
+
+      .vjs_video_3-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+      <meta charset="utf-8">
+      <style>
+      .box,canvas.test{box-sizing:border-box}.clearfix:after,.mode-static.grid:after,.mode-three:after,.sitehead nav ul:after,.sitehead:after,.workSingle .nextPrev:after,.workSingle .projectInfo:after{content:" "}.pk-spin,.vjs-error .pk-spinner{animation:pk-spinner 1.2s linear infinite}.clickable,.clickarea,.noselect{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}.submenu ul li a._activeExact,.submenu ul li a:hover,p a{text-decoration:underline}.block,.submenu ul,.workListItem .thumbnail,footer,main .pageheader{overflow:hidden}.topLayerP1{z-index:101}.topLayer{z-index:100}.topLayerM1{z-index:99}.middleLayerP1{z-index:51}.middleLayer{z-index:50}.middleLayerM1{z-index:49}.bottomLayerP1{z-index:11}.bottomLayer{z-index:10}.bottomLayerM1{z-index:9}.box{-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.flex{display:-moz-box;display:-webkit-flexbox;display:-ms-flexbox;display:-webkit-flex;display:-moz-flex;display:flex}.clearfix:after{display:block;clear:both}.inlineblock{display:inline-block}.relative{position:relative}@keyframes pk-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@-webkit-keyframes pk-spinner{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}@-o-keyframes pk-spinner{0%{-o-transform:rotate(0)}100%{-o-transform:rotate(360deg)}}@-moz-keyframes pk-spinner{0%{-moz-transform:rotate(0)}100%{-moz-transform:rotate(360deg)}}.pk-spin{-webkit-animation:pk-spinner 1.2s linear infinite;-o-animation:pk-spinner 1.2s linear infinite;-moz-animation:pk-spinner 1.2s linear infinite}.pk-spinbar,.pk-spinner{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;display:block;width:20px;height:5px;background:#000}.amp,.pk-video-poster,.sprite{background-repeat:no-repeat}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;vertical-align:baseline}.block .middle,.block .right,.block .second{padding-left:13.04px}.block .left,.block .left p,.block .middle{padding-right:13.04px}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}@font-face{font-family:Maison;src:url(/_file/1c29e94bd1ce5e402bb20ce385fc4055.woff2) format('woff2'),url(/_file/60bd09dfef8a9db7ed972a52c27bfca0.woff) format('woff')}.pk-video-interface .pk-spinner{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0}.vjs-paused .pk-play,.vjs-paused .pk-progress{-webkit-transition:opacity .2s,transform 50ms;-moz-transition:opacity .2s,transform 50ms;-ms-transition:opacity .2s,transform 50ms;-o-transition:opacity .2s,transform 50ms;transition:opacity .2s,transform 50ms;filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1}.vjs-error .pk-pause,.vjs-error .pk-play{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0}.vjs-error .pk-spinner{-webkit-transition:opacity .2s,transform 50ms;-moz-transition:opacity .2s,transform 50ms;-ms-transition:opacity .2s,transform 50ms;-o-transition:opacity .2s,transform 50ms;transition:opacity .2s,transform 50ms;filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1;-webkit-animation:pk-spinner 1.2s linear infinite;-o-animation:pk-spinner 1.2s linear infinite;-moz-animation:pk-spinner 1.2s linear infinite}.vjs-seeking .pk-play,.vjs-waiting .pk-play{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0}.vjs-seeking .pk-spinner,.vjs-waiting .pk-spinner{filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1;animation:pk-spinner 1.2s linear infinite;-webkit-animation:pk-spinner 1.2s linear infinite;-o-animation:pk-spinner 1.2s linear infinite;-moz-animation:pk-spinner 1.2s linear infinite}.pk-video-poster{width:100%;height:100%;background-size:cover;position:relative;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-ms-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1}.vjs-playing .pk-play{-webkit-transition:opacity 0s,transform 50ms;-moz-transition:opacity 0s,transform 50ms;-ms-transition:opacity 0s,transform 50ms;-o-transition:opacity 0s,transform 50ms;transition:opacity 0s,transform 50ms}.vjs-playing .pk-pause{-webkit-transition:opacity 2s,transform 50ms;-moz-transition:opacity 2s,transform 50ms;-ms-transition:opacity 2s,transform 50ms;-o-transition:opacity 2s,transform 50ms;transition:opacity 2s,transform 50ms}.vjs-has-started .pk-video-poster{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0}.pk-mousemoved .pk-pause,.pk-mousemoved .pk-progress{-webkit-transition:opacity .2s,transform 50ms;-moz-transition:opacity .2s,transform 50ms;-ms-transition:opacity .2s,transform 50ms;-o-transition:opacity .2s,transform 50ms;transition:opacity .2s,transform 50ms;filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1}.vjs-paused .pk-pause{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0}.pk-fullscreen,.pk-pause,.pk-play,.pk-progress,.pk-volume{display:none}.pk-ui-fullscreen,.pk-ui-playPause .pk-pause,.pk-ui-playPause .pk-play,.pk-ui-progress.vjs-has-started .pk-progress,.pk-ui-volume .pk-volume{display:block}canvas.test{z-index:2000;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;pointer-events:none}.login .loginfield,.login .logout,.regular,body{-moz-font-feature-settings:"ss05";-webkit-font-feature-settings:"ss05";font-feature-settings:"ss05";font-family:Maison;font-weight:500}.about .person .text,.about .slider .next,.about .slider .prev,.about .toAll,.articles .articleSingle .side,.grid .gridItem,.mode-flow.grid .workListItem .disciplines,.mode-flow.grid .workListItem .title,.mode-three .workListItem .disciplines,.mode-three .workListItem .title,.search.sectionTop,.small,.workSingle .moreInfo,main h4{font-size:13.91px;line-height:24.34px}.small .amp{height:24.34px}@media only screen and (min-width:768px){.about .person .text,.about .slider .next,.about .slider .prev,.about .toAll,.articles .articleSingle .side,.grid .gridItem,.mode-flow.grid .workListItem .disciplines,.mode-flow.grid .workListItem .title,.mode-three .workListItem .disciplines,.mode-three .workListItem .title,.search.sectionTop,.small,.workSingle .moreInfo,main h4{font-size:1.3582343vw;line-height:2.37691002vw}.small .amp{height:2.37691002vw}}@media only screen and (min-width:1550px){.about .person .text,.about .slider .next,.about .slider .prev,.about .toAll,.articles .articleSingle .side,.grid .gridItem,.mode-flow.grid .workListItem .disciplines,.mode-flow.grid .workListItem .title,.mode-three .workListItem .disciplines,.mode-three .workListItem .title,.search.sectionTop,.small,.workSingle .moreInfo,main h4{font-size:21.05px;line-height:36.84px}.small .amp{height:36.84px}}@media only screen and (max-width:767px){.about .person .text,.about .slider .next,.about .slider .prev,.about .toAll,.articles .articleSingle .side,.grid .gridItem,.mobileSmall,.mode-flow.grid .workListItem .disciplines,.mode-flow.grid .workListItem .title,.mode-three .workListItem .disciplines,.mode-three .workListItem .title,.search.sectionTop,.workSingle .moreInfo,main h4{font-size:3.57142857vw;line-height:4.28571429vw}}.about h2,.login .loginfield,.login .loginform,.login .logout,.medium,.search.sectionTop .title,.workSingle .related h3,body{font-size:24.34px;line-height:33.03px}.medium .amp{height:34.77px}@media only screen and (min-width:768px){.about h2,.login .loginfield,.login .loginform,.login .logout,.medium,.search.sectionTop .title,.workSingle .related h3,body{font-size:2.37691002vw;line-height:3.22580645vw}.medium .amp{height:3.39558574vw}}@media only screen and (min-width:1550px){.about h2,.login .loginfield,.login .loginform,.login .logout,.medium,.search.sectionTop .title,.workSingle .related h3,body{font-size:36.84px;line-height:50px}.medium .amp{height:52.63px}}.sprite._viewflow,.sprite._viewgrid,.sprite._viewtext{background-size:66px 22px;width:20px;height:20px}@media only screen and (max-width:767px){.about h2,.login .loginfield,.login .loginform,.login .logout,.mobileMedium,.search.sectionTop .title,.workSingle .related h3,body{font-size:5.6122449vw;line-height:7.23979592vw}}.answers .pageheader,.answers h2,.articles .articleSingle h1,.big,.front .splash,.mode-full.grid .title,.searchMatches .nomatch,.searchMatches a,.sitehead .searchBar .prediction,.sitehead .searchBar input,.sitehead nav,.submenu ul,.workSingle h1,main h1,main h2{font-size:33.03px;line-height:38.25px}@media only screen and (min-width:768px){.answers .pageheader,.answers h2,.articles .articleSingle h1,.big,.front .splash,.mode-full.grid .title,.searchMatches .nomatch,.searchMatches a,.sitehead .searchBar .prediction,.sitehead .searchBar input,.sitehead nav,.submenu ul,.workSingle h1,main h1,main h2{font-size:3.22580645vw;line-height:3.73514431vw}}@media only screen and (min-width:1550px){.answers .pageheader,.answers h2,.articles .articleSingle h1,.big,.front .splash,.mode-full.grid .title,.searchMatches .nomatch,.searchMatches a,.sitehead .searchBar .prediction,.sitehead .searchBar input,.sitehead nav,.submenu ul,.workSingle h1,main h1,main h2{font-size:50px;line-height:57.89px}}@media only screen and (max-width:767px){.answers .pageheader,.mobileBig,.mode-full.grid .title,.searchMatches .nomatch,.searchMatches a,.sitehead .searchBar .prediction,.sitehead .searchBar input,.sitehead nav,.submenu ul,.workSingle h1,main h1,main h2{font-size:8.26530612vw;line-height:10.26020408vw}}.…
+      </style>
+      <link rel="shortcut icon" href="/_image/7bad92e….ico">
+      <link rel="icon" type="image/png" href="/_image/192x192/7bad92e….png" sizes="192x192">
+      <link rel="icon" type="image/png" href="/_image/196x196/7bad92e….png" sizes="196x196">
+      <link rel="apple-touch-icon" href="/_image/7bad92e….png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/_image/72x72/7bad92e….png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/_image/114x114/7bad92e….png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/_image/144x144/7bad92e….png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rachele Tozzini</title>
+      <meta property="og:title" content="Rachele Tozzini">
+      <meta property="og:url" content="https://RTart&design.com//">
+      <head>
+      <body class="arRootSec atBottom atFooter scrolledUp" style>
+      <script> document.getElementsByTagName("html")[0].className += " js"; </script>
+      <div id="inverter" class="invert atFront">
+      <header class="sitehead dark fronthead">…</header>
+      <div class="background"></div>
+      <div class="siteheadWrap">…</div>
+      <div class="dropnav">…</div>
+      <div class="burgerbar bb1"></div>
+      <div class="burgerbar bb2"></div>
+      <div class="burgerbar bb3"></div>
+      <a class="h1 _active _activeExact _treeActive _treeActiveExact" href="/">…</a>
+      <h1>…</h1>
+      <img class="ampersand noinv loaded" alt="&" src="/_file/4b1ea9e….png">
+      <img class="ampersand inv loaded" alt src="/_file/b9dac82….png">
+      <span class="sh walsh">…</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.4 13.5" role="img">…</svg>
+      <title>Rachele Tozzini</title>
+      <path d="M13.7,0l-2,13.2H9.6L6.8,5.7l-2.8,7.5H2L0,0h2l1.4,10.1l2.8-7.7h1.3l2.8,7.7L11.7,0H13.7z"></path>
+      <path d="M25.5,0l1.9,0v13.2h-1.9V0z"></path>
+      <path d="M30.5,9.6c0.2,1.4,1.5,2.3,3.2,2.3c1.6,0,2.5-0.5,2.5-1.4c0-0.9-0.6-1.2-2.9-1.6c-2.8-0.5-3.9-1.2-3.9-3c0-1.7,1.6-3,3.8-3c2.1,0,4.1,1.3,4.5,3.1l-1.7,0.4c-0.3-1.1-1.4-1.9-2.7-1.9c-1.1,0-2,0.6-2,1.4c0,0.8,0.5,1,2.9,1.4c2.8,0.5,3.9,1.3,3.9,3.1c0,1.9-1.6,3.1-4.3,3.1c-1.4,0-2.5-0.3-3.4-1c-0.9-0.7-1.4-1.5-1.6-2.6L30.5,9.6z"></path>
+      <path d="M48.4,13.2h-1.9V7.3c0-1.8-0.8-2.6-2.5-2.6c-1.7,0-2.7,1.1-2.7,2.7v5.9h-1.9V0h1.9v4.2c0.7-0.8,1.8-1.2,3.1-1.2c2.4,0,4,1.6,4,4.2V13.2z"></path>
+      <path d="M24,11.5c-0.4,0.1-0.6,0.1-0.8,0.1c-0.5,0-0.7-0.3-0.7-0.9V6.2c0-2-1.4-3.3-3.8-3.3c-1.1,0-2.1,0.3-2.9,0.9c-0.8,0.6-1.3,1.5-1.4,2.5l1.7,0.3c0.2-1.2,1.1-2,2.6-2c1.2,0,2,0.5,2,1.3c-0.1,0.8-0.5,1-2.9,1.6c-2.5,0.5-3.4,1.4-3.4,3.1c0,0.9,0.3,1.6,1,2.1c0.7,0.5,1.5,0.8,2.6,0.8c1.4,0,2.6-0.5,3.2-1.3c0.3,0.8,0.9,1.2,1.8,1.2c0.3,0,0.6,0,1-0.1V11.5z M20.8,9.8c0,1.2-1.1,1.9-2.7,1.9c-1.2,0-1.8-0.5-1.8-1.3c0-0.7,0.5-1.1,2.1-1.5c1.7-0.5,2.2-0.7,2.4-1V9.8z"></path>
+      </svg>
+      </span>
+      </h1>
+      </a>
+      <div class="searchBar sv">
+      <input type="text">
+      <span class="prediction"></span>
+      </div>
+      <nav id="topnav">…</nav>
+      <ul>…</ul>
+      <li class="top sh topmenu-work">…</li>
+      <a href="/work/" class="toplink">…</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.1 13.5" role="img">…</svg>
+      <title>Work</title>
+      <path d="M13.6,0l-2,13.2H9.5L6.8,5.7L4,13.2H2L0,0h2l1.4,10.1l2.8-7.7h1.3l2.8,7.7L11.6,0H13.6z"></path>
+      <path d="M19.1,2.9c2.8,0,4.7,2.1,4.7,5.3c0,3.2-1.9,5.3-4.7,5.3s-4.7-2.1-4.7-5.3C14.4,5,16.3,2.9,19.1,2.9z M19.1,4.7c-1.8,0-2.8,1.4-2.8,3.6c0,2.2,1,3.6,2.8,3.6c1.8,0,2.8-1.4,2.8-3.6C22,6,20.9,4.7,19.1,4.7z"></path>
+      <path d="M19.1,2.9c2.8,0,4.7,2.1,4.7,5.3c0,3.2-1.9,5.3-4.7,5.3s-4.7-2.1-4.7-5.3C14.4,5,16.3,2.9,19.1,2.9z M19.1,4.7c-1.8,0-2.8,1.4-2.8,3.6c0,2.2,1,3.6,2.8,3.6c1.8,0,2.8-1.4,2.8-3.6C22,6,20.9,4.7,19.1,4.7z"></path>
+      <path d="M31,5.2c-0.7-0.4-1.1-0.5-1.6-0.5c-1.1,0-1.8,0.9-1.8,2.3v6.2h-1.9v-10h1.8v0.9c0.4-0.7,1.2-1.2,2.2-1.2c0.7,0,1.3,0.2,2,0.6L31,5.2z"></path>
+      <path d="M36.6,8.5l-1.5,1.7v3h-1.9V0h1.9v7.8l4-4.6h2.5l-3.8,4.1l4.3,5.9h-2.2L36.6,8.5z"></path>
+      </svg>
+      </a>
+      </li>
+      <li class="top sh topmenu-info">
+      <a href="/info/" class="toplink">…</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.3 14" role="img">
+      <title>Info</title>
+      <path d="M0,0.5h2v13.2H0V0.5z"></path>
+      <path d="M13.8,13.7h-1.9V7.8c0-1.8-0.8-2.6-2.5-2.6c-1.6,0-2.7,1.1-2.7,2.7v5.9H4.8v-10h1.9v0.9c0.7-0.8,1.8-1.2,3.1-1.2c2.3,0,4,1.6,4,4.2V13.7z"></path>
+      <path d="M17.3,5.4h-2.3V3.7h2.3V2.6C17.3,1,18.3,0,20,0c0.8,0,1.7,0.3,2.7,0.9l-0.8,1.5c-0.9-0.5-1.3-0.6-1.8-0.6c-0.6,0-0.9,0.3-0.9,0.9v1.1h3.1v1.7h-3.1v8.3h-1.9V5.4z"></path>
+      
+  
+  
