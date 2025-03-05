@@ -63,7 +63,21 @@
             transition: all 0.6s ease;
             height: auto;
         }
+        .header-position {
+            position: relative;
+            align-self: stretch;
+}
 
+.header-bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: -15px; /* Regola la distanza dal bordo inferiore */
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+        
         .header-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -71,6 +85,7 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
+            align-items: flex-start;
         }
 
         .col-1 { grid-column: span 1; }
@@ -85,7 +100,7 @@
             text-decoration: none;
             color: black;
             font-size: 2.8rem;
-            align-self: center;
+            align-self: flex-start;
         }
 
         .header-center {
@@ -102,7 +117,7 @@
             display: flex;
             justify-content: flex-end;
             gap: 40px;
-            align-self: center;
+            align-self: flex-start;
         }
 
         nav a {
@@ -239,7 +254,7 @@
 
         /* 6. Responsive Design */
         @media (max-width: 768px) {
-            .header-grid {
+             {
                 grid-template-columns: 1fr;
                 gap: 15px;
                 text-align: center;
@@ -282,7 +297,9 @@
         <header>
             <div class="header-grid">
                 <a href="/" class="logo col-2">Rachele Tozzini</a>
-                <div class="header-center col-2">Art & Product Design</div>
+                <div class="header-position col-4">
+                <div class="header-bottom-left">Art & Product Design</div>
+                </div>    
                 <nav class="col-2">
                     <a href="/work">Work</a>
                     <a href="/about">Info</a>
