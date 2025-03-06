@@ -120,9 +120,11 @@
         /* 3. Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(6,1fr);
+             grid-template-rows: repeat(2, 1fr);
             gap: 30px;
             padding: 0 40px;
+            height: 100vh;
         }
 
         .project-item {
@@ -130,11 +132,13 @@
             overflow: hidden;
             perspective: 1000px;
             transform-style: preserve-3d;
+             aspect-ratio: 1 / 1; /* Mantiene quadrati i progetti */
         }
 
         .project-image {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Riempie lo spazio mantenendo le proporzioni */
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             transform: scale(1.02);
         }
