@@ -47,6 +47,13 @@ nav a:not(.search-button):hover {
 }
 
 @media (max-width: 768px) {
+    .header-bottom-right {
+        position: static;
+        text-align: left;
+        padding-left: 15px;
+        margin-top: 20px;
+            }
+    
     nav a {
         margin-left: 15px;
         font-size: 1em;
