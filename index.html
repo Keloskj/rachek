@@ -132,13 +132,20 @@
             grid-template-rows: repeat(1, 1fr);
             gap: 30px;
             /*padding: 0 30px;*/
-            height: 80vh;
+            max-width: 1200px; /* Larghezza massima */
+            margin: 0 auto; /* Centratura orizzontale */
+            padding: 0 30px;
+            height: auto; /* Rimuovi l'altezza fissa */
+            min-height: 80vh; /* Altezza minima invece di fissa */
         }
 
         .project-item {
             overflow: hidden;
            /*perspective: 200px;*/
             aspect-ratio: 1 / 1; /* Mantiene quadrati i progetti */
+             width: 100%; /* Occupa tutto lo spazio disponibile */
+            max-width: 400px; /* Dimensione massima */
+            margin: 0 auto; /* Centratura nella cella della griglia */
         }
 
         .project-image {
@@ -243,6 +250,7 @@
        
         <main>
             <div class="projects-grid">
+                <div class="grid-spacer"></div>
                 <div class="project-item">
                     <img src="gaia per sitopng.png" alt="Project 1" class="project-image">
                     <div class="project-info">
@@ -250,6 +258,7 @@
                         <p class="project-category">Art</p>
                     </div> 
                 </div>
+                <div class="grid-spacer"></div>
             </div>
         </main>
     </div>
