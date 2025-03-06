@@ -63,7 +63,7 @@
             transition: all 0.6s ease;
             height: auto;
             padding: 20px 5% 30px; /* Top 20px - Bottom 30px */
-            left: 40px
+            
         }
         .header-position {
             position: relative;
@@ -71,9 +71,9 @@
 }
 
 .header-bottom-left {
-    position: fixed;
-    left: 40px;
-    bottom: -750px; /* Regola la distanza dal bordo inferiore */
+    position: absolute;
+    left: 5%;
+    bottom: 20px; /* Regola la distanza dal bordo inferiore */
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0.8px;
@@ -88,6 +88,8 @@
             max-width: 1400px;
             margin: 0 auto;
             align-items: flex-start;
+            position: relative;
+            padding-top: 40px;
         }
         
         .col-1 { grid-column: span 1; }
@@ -99,12 +101,13 @@
 
         .logo {
             font-weight: bold;
-            text-decoration: none;
             color: black;
             font-size: 2.8rem;
-            align-self: flex-start;
-            margin-top: -5px;
-            padding-left: 15px
+            position: absolute;
+            left: 5%
+            top: 20px
+            margin: 0;
+            padding: 0;
         }
 
         .header-center {
