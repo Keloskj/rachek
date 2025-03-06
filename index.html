@@ -124,6 +124,10 @@
             padding-top: 200px;
         }
 
+        <!-- Scroll Indicator -->
+        <img src="path/to/home per sito.png" class="scroll-indicator" alt="Scroll indicator">
+
+    
         /* 3. Projects Grid */
         .projects-grid {
             display: grid;
@@ -232,6 +236,22 @@
                 padding: 0 20px;
                 gap: 20px;
             }
+            
+            // Scroll indicator
+const scrollIndicator = document.querySelector('.scroll-indicator');
+let scrollTimeout;
+
+window.addEventListener('wheel', () => {
+    scrollIndicator.classList.add('visible');
+    
+    // Resetta il timeout ogni volta che c'è nuovo scroll
+    clearTimeout(scrollTimeout);
+    
+    // Nascondi l'indicatore dopo 2 secondi dall'ultimo scroll
+    scrollTimeout = setTimeout(() => {
+        scrollIndicator.classList.remove('visible');
+    }, 2000);
+});
         }
     </style>
 </head>
