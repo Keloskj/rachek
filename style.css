@@ -80,3 +80,9 @@ nav a:not(.search-button):hover {
         padding: 6px 10px;
     }
 }
+ /* 6. Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                padding: 15px;
+            }
