@@ -46,22 +46,6 @@ nav a:not(.search-button):hover {
     opacity: 0.7;
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-.scroll-indicator.visible {
-    opacity: 1;
-}
-
 @media (max-width: 768px) {
     .header-bottom-right {
         position: static;
