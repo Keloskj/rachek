@@ -64,8 +64,18 @@
             transition: all 0.6s ease;
         }
 
-        .background {
-            background: linear-gradient(#000000, rgba(255, 255, 255, 0));
+        .sitehead .background {
+            position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: background .4s;
+    pointer-events: none;
+    height: 78.23px;
+    background: linear-gradient(#060509, rgba(0, 0, 0, 0));
+}
+        .invert .sitehead .background {
+            background: linear-gradient(#f3f3f3, rgba(255, 255, 255, 0));
         }
 
         .logo {
