@@ -124,7 +124,6 @@
             padding-top: 200px;
         }
 
-        
         /* 3. Projects Grid */
         .projects-grid {
             display: grid;
@@ -201,11 +200,18 @@
             width: 40px;
             height: 40px;
         }
-        
-        .logo {
-            position: static;
-            margin-bottom: 15px;
-        }
+
+        /* 6. Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                padding: 15px;
+            }
+
+            .logo {
+                position: static;
+                margin-bottom: 15px;
+            }
 
             nav {
                 position: static;
