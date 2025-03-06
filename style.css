@@ -46,12 +46,25 @@ nav a:not(.search-button):hover {
     opacity: 0.7;
 }
 
+ /* 6. Responsive Design */
 @media (max-width: 768px) {
+    
+    header {
+        height: auto;
+        padding: 15px;
+    }
+
     .header-bottom-right {
         position: static;
         text-align: left;
         padding-left: 15px;
         margin-top: 20px;
+            }
+    nav {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 20px;
             }
     
     nav a {
@@ -59,14 +72,21 @@ nav a:not(.search-button):hover {
         font-size: 1em;
     }
     
-    .search-button {
-        margin-left: 10px !important;
-        padding: 6px 10px;
+    .logo {
+        position: static;
+        margin-bottom: 15px;
     }
-}
- /* 6. Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                height: auto;
-                padding: 15px;
+
+    .header-bottom-right {
+        position: static;
+        text-align: right;
+        margin-top: 10px;
+        padding-right: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 20px;
             }
+        }
