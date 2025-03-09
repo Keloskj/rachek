@@ -64,8 +64,18 @@
             top: 25px;
         }
 
-        .logo {
-            position: fixed;
+        .header div {
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+/* Allineamento specifico per le colonne */
+        .header .logo {
+            text-align: left;
+            justify-content: flex-start;
+            padding-left: 0rem;
             font-size: 3rem;
             font-weight: bold;
             color: black;
@@ -73,7 +83,37 @@
             z-index: 101;
         }
 
-        .nav {
+        .header .work {
+            justify-content: left;
+            padding-left: 0rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .header .info {
+            justify-content: left;
+            padding-left: 0rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .header .contact {
+            justify-content: left;
+            padding-left: 0rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /*.logo {
+            position: fixed;
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            z-index: 101;
+        }*/
+
+        /*.nav {
             position: fixed;
             display: flex;
             gap: 30px;
@@ -89,7 +129,7 @@
 
         .nav a:hover {
             opacity: 0.7;
-        }
+        }*/
 
         .header-bottom-left {
             position: absolute;
@@ -102,7 +142,6 @@
             bottom: 35px;
             height: 40px;
         }
-
        
         .main {
             padding-top: 0px;
@@ -249,13 +288,13 @@
 
     <!-- Header -->
     <div class="main-content">
-        <header class="header">
-            <div class="logo">rachele tozzini</div>
-            <nav>
-                <a href="/work">Work</a>
-                <a href="/about">Info</a>
-                <a href="/contact">Contact</a>
-            </nav>
+        <header>
+            <div class="header">
+                <div class="logo">rachele tozzini</div>
+                <div class="work">Work</div>
+                <div class="info">Info</div>
+                <div class="contact">Contact</div>
+            </div>
         <header>
     
     <div class="header-bottom-left">Art & Product Design</div>
