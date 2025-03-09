@@ -131,12 +131,13 @@
         }
 
         .project-item {
-            width: 100%;
+            width: 110%;
             height: 99%;
             max-width: none;
             aspect-ratio: unset;
             position: relative;
             object-fit: cover;
+            transform: translate(-50px, 0px);
         }
 
        .project-image {
@@ -144,8 +145,7 @@
            height: 100%;
            object-fit: cover; /* Riempie lo spazio mantenendo le proporzioni */
            object-position: absolute;
-           margin-left: 25px;
-           margin-right: 10px;
+           padding: 0rem 2rem 0rem 2rem;
         }
         
         .video.project-image {
@@ -270,12 +270,10 @@
                     </video>
                 </div>
             </div>
-            <div class="project-image">
+            <div class="project-container">
                 <img src="pachamama finale.jpg" alt="Nuovo progetto" class="project-image">
-                <div class="project-info">
+                <div class="project-info"></div>
                 <h3 class="project-title">PACHA-MAMA </h3>
-                </div> 
-            </div>
             </div>
         </main>
     </div>
