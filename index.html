@@ -54,7 +54,7 @@
         }
 
         header {
-            position: fixed;
+            position: absolute;
             width: 100%;
             padding: -100px 5%;
             z-index: 100;
@@ -62,9 +62,9 @@
         }
 
         .logo {
-            position: fixed;
+            position: absolute;
             left: 1%;
-            top: 20px;
+            top: -80px;
             font-size: 3rem;
             font-weight: bold;
             color: black;
@@ -73,9 +73,9 @@
         }
 
         nav {
-            position: fixed;
-            right: 1%;
-            top: 20px;
+            position: absolute;
+            right: 5%;
+            top: -80px;
             display: flex;
             gap: 30px;
             font-weight: 500;
@@ -118,19 +118,9 @@
             height: calc(100vh - 120px - 60px); /* 120px header + 60px testo basso */
             margin-top: 103px; /* Altezza header */
             margin-bottom: 60px; /* Spazio per il testo in basso */
-            /* max-width: 2000px; /* Larghezza massima */
-            /* margin: 0 auto; /* Centratura orizzontale */
-            /*padding: 0 30px;*/
-            /* min-height: 80vh; /* Altezza minima invece di fissa */
         }
 
         .project-item {
-            /* overflow: hidden;
-            /*perspective: 200px;*/
-            /* aspect-ratio: 1 / 1; /* Mantiene quadrati i progetti */
-            /* width: 100%; /* Occupa tutto lo spazio disponibile */
-            /* max-width: 400px; /* Dimensione massima */
-            /* margin: 0 auto; /* Centratura nella cella della griglia */
             width: 100%;
             height: 99%;
             max-width: none;
