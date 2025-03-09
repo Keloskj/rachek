@@ -149,9 +149,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover; /* Riempie lo spazio mantenendo le proporzioni */
-            /*transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);*/
+             object-position: center;
+           /*transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);*/
         }
-
+        
+        video.project-image {
+            background: #000; /* Sfondo per eventuali bordi neri */
+    /* Forza la copertura completa come per le immagini */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .project-info {
             position: absolute;
             bottom: 20px;
@@ -247,11 +256,15 @@
        
         <main>
             <div class="projects-grid">
-                <div class="grid-spacer"></div>
                 <div class="project-item">
-                    <img src="gaia per sitopng.png" alt="Project 1" class="project-image">
+                    <video class="project-image" autoplay loop muted playsinline>
+                        <source src="low close up, move the balls in every direction.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-info">
+                        <h3 class="project-title">LOGOS</h3>
+                        <p class="project-category">Art</p>
+                    </div> 
                 </div>
-                <div class="grid-spacer"></div>
             </div>
         </main>
     </div>
@@ -350,6 +363,13 @@
         document.querySelectorAll('.project-item').forEach(item => {
         });
 
+        const videos = document.querySelectorAll('video.project-image');
+        videos.forEach(video => {
+            video.addEventListener('click', () => {
+                video.muted = !video.muted;
+            });
+        });
+        
         // Scroll indicator
 const scrollIndicator = document.querySelector('.scroll-indicator');
 let scrollTimeout;
