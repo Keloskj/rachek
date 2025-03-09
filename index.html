@@ -120,13 +120,17 @@
             margin-bottom: 60px; /* Spazio per il testo in basso */
         }
 
-        .project-item {
+        .project-item bordered {
             width: 100%;
             height: 99%;
             max-width: none;
             aspect-ratio: unset;
             position: relative;
             object-fit: cover;
+            border-left: 15px solid #000;
+            border-right: 15px solid #000;
+            box-sizing: border-box;
+            padding: 0 20px;
         }
 
        .project-image {
@@ -260,7 +264,7 @@
                     </video>
                 </div>
             </div>
-            <div class="project-image">
+            <div class="project-image bordered">
                 <img src="pachamama finale.jpg" alt="Nuovo progetto" class="project-image">
                 <div class="project-info">
                 <h3 class="project-title">PACHA-MAMA </h3>
@@ -268,7 +272,6 @@
             </div>
             </div>
         </main>
-    </div>
 
     <!-- SVG Filter per cursore -->
     <svg>
