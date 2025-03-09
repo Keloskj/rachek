@@ -58,7 +58,6 @@
             width: 100%;
             height: 120px;
             padding: 20px 5%;
-            /* background: rgba(255,255,255,0.9); */
             backdrop-filter: blur(10px);
             z-index: 100;
             transition: all 0.6s ease;
@@ -117,47 +116,60 @@
             font-weight: 500;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            z-index: 99;
+            z-index: 95;
+            bottom: 20px;
+            left: 5%;
+            height: 40px;
         }
 
        
         main {
-            padding-top: 50px;
+            padding-top: 0px;
+            position: relative;
+            z-index: 90;
         }
 
         /* 3. Projects Grid */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(1,1fr);
-            gap: 30px;
-            max-width: 2000px; /* Larghezza massima */
-            margin: 0 auto; /* Centratura orizzontale */
+            display: block;
+            position: relative;
+            height: calc(100vh - 120px - 60px); /* 120px header + 60px testo basso */
+            margin-top: 120px; /* Altezza header */
+            margin-bottom: 60px; /* Spazio per il testo in basso */
+            /* max-width: 2000px; /* Larghezza massima */
+            /* margin: 0 auto; /* Centratura orizzontale */
             /*padding: 0 30px;*/
-            min-height: 80vh; /* Altezza minima invece di fissa */
+            /* min-height: 80vh; /* Altezza minima invece di fissa */
         }
 
         .project-item {
-            overflow: hidden;
-           /*perspective: 200px;*/
-            aspect-ratio: 1 / 1; /* Mantiene quadrati i progetti */
-            width: 100%; /* Occupa tutto lo spazio disponibile */
-            max-width: 400px; /* Dimensione massima */
-            margin: 0 auto; /* Centratura nella cella della griglia */
+            /* overflow: hidden;
+            /*perspective: 200px;*/
+            /* aspect-ratio: 1 / 1; /* Mantiene quadrati i progetti */
+            /* width: 100%; /* Occupa tutto lo spazio disponibile */
+            /* max-width: 400px; /* Dimensione massima */
+            /* margin: 0 auto; /* Centratura nella cella della griglia */
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            aspect-ratio: unset;
+            position: relative;
         }
 
        .project-image {
            width: 100%;
            height: 100%;
            object-fit: cover; /* Riempie lo spazio mantenendo le proporzioni */
-           object-position: center;
-           /*transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);*/
+           object-position: absolute;
+           top:0
+           left:0
         }
         
         video.project-image {
             background: #000; /* Sfondo per eventuali bordi neri */
     /* Forza la copertura completa come per le immagini */
-            width: 400%;
-            height: 600%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
         
