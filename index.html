@@ -53,7 +53,7 @@
             opacity: 1;
         }
 
-        header {
+        .header {
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
             position: fixed;
@@ -73,21 +73,21 @@
             z-index: 101;
         }
 
-        nav {
+        .nav {
             position: fixed;
             display: flex;
             gap: 30px;
             font-weight: 500;
         }
 
-        nav a {
+        .nav a {
             font-size: 3rem;
             color: #000000;
             text-decoration: none;
             transition: opacity 0.3s ease;
         }
 
-        nav a:hover {
+        .nav a:hover {
             opacity: 0.7;
         }
 
@@ -104,7 +104,7 @@
         }
 
        
-        main {
+        .main {
             padding-top: 0px;
             position: relative;
             z-index: 90;
@@ -248,12 +248,13 @@
     </div>
 
     <!-- Header -->
-    <div class="header">
-        <div class="logo">rachele tozzini</div>
-        <div class="nav">Work</div>
-        <div class="nav">Info</div>
-        <div class="nav">Contact</div>
-    </div>
+    <div class="main-content">
+        <header class="header">
+            <div class="logo">rachele tozzini</div>
+            <div class="nav">Work</div>
+            <div class="nav">Info</div>
+            <div class="nav">Contact</div>
+        <header>
     
     <div class="header-bottom-left">Art & Product Design</div>
     
