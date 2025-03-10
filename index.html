@@ -7,28 +7,30 @@
     <style>
         /* 1. Splash Screen */
         .splash {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            transition: opacity 0.3s ease;
-        }
-
-        .splash.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .splash-logo {
+          position: absolute;
             width: 800px;
-            opacity: 0;
-            animation: logoReveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: all 3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            background: rgba(255,255,255,0.98);
+            mix-blend-mode: normal !important;
+        }
+
+        .splash.hide .splash-logo {
+            width: 200px; /* Dimensione finale nell'header */
+            top: 20px;
+            left: 1%;
+            transform: translate(0, 0);
+            will-change: transform, width, height;
+            filter: contrast(1.1) saturate(1.1);
+        }
+
+        .logo {
+           visibility: hidden; /* Nascondi il logo testuale */ 
         }
 
         @keyframes logoReveal {
@@ -286,9 +288,12 @@
     
     <!-- Splash Screen -->
     <div class="splash">
-        <img src="logo.mov" alt="Brand Logo" class="splash-logo">
+        <video class="splash-logo" muted playsinline>
+        <source src="logo.mov" type="video/mp4">
+            <source src="logo.mp4" type="video/mp4">
+        </video>
     </div>
-
+    
     <!-- Header -->
     <div class="main-content">
         <header>
@@ -407,28 +412,41 @@
         }
 
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.splash').classList.add('hide');
-                document.querySelector('.main-content').classList.add('loaded');
-                
-                document.querySelector('.splash').addEventListener('transitionend', () => {
-                    document.querySelector('.splash').remove();
-                });
-            }, 1000);
-        });
+             const splash = document.querySelector('.splash');
+            const splashVideo = document.querySelector('.splash-logo');
+            const mainContent = document.querySelector('.main-content');
 
-        /*gsap.registerPlugin(ScrollTrigger);
+           // Avvia l'animazione dopo il caricamento
+    splashVideo.play(); 
+
+            // Calcola la durata del video in millisecondi
+    const videoDuration = splashVideo.duration * 1000;
+
+            // Animazione sincronizzata con il video
+    setTimeout(() => {
+        splash.classList.add('hide');
+        mainContent.classList.add('loaded');
+
+        // Aggiungi il video all'header
+        const header = document.querySelector('header');
+        const clonedLogo = splashVideo.cloneNode(true);
+        clonedLogo.style.cssText = `
+            position: fixed;
+            width: 200px;
+            top: 20px;
+            left: 1%;
+            z-index: 1001;
+        `;
+        header.appendChild(clonedLogo);
         
-        gsap.to("header", {
-            scrollTrigger: {
-                trigger: "main",
-                start: "top top",
-                toggleActions: "play none none reverse"
-            },
-            backgroundColor: "rgba(255,255,255,0.97)",
-            duration: 0.6
-        });*/
-
+    }, videoDuration - 500); // Sottrai 500ms per sincronizzazione
+});
+        // Aggiungi questa configurazione video
+        splashVideo.setAttribute('preload', 'auto');
+        splashVideo.setAttribute('autoplay', '');
+        splashVideo.setAttribute('loop', 'false');
+        splashVideo.style.transformOrigin = 'center center';
+        
         document.querySelectorAll('.project-item').forEach(item => {
         });
 
