@@ -64,6 +64,29 @@
             top: 25px;
         }
 
+        /* Crea un pseudo-elemento per il gradiente */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 40px); /* Larghezza personalizzata */
+            height: 80px; /* Altezza personalizzata */
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0.9) 0%,
+                rgba(255,255,255,0.7) 30%,
+                rgba(255,255,255,0.5) 70%,
+                rgba(255,255,255,0) 100%
+            );
+            
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
         .header div {
             display: flex;
             align-items: center;
