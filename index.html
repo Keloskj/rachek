@@ -62,6 +62,13 @@
             z-index: 100;
             transition: all 0.6s ease;
             top: 25px;
+            background: linear-gradient(
+                to bottom, 
+                rgba(255,255,255,0.9) 0%, 
+                rgba(255,255,255,0.7) 30%, 
+                rgba(255,255,255,0) 100%
+            );
+            backdrop-filter: blur(5px);
         }
 
         .header div {
@@ -417,17 +424,6 @@
             }, 1000);
         });
 
-        /*gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.to("header", {
-            scrollTrigger: {
-                trigger: "main",
-                start: "top top",
-                toggleActions: "play none none reverse"
-            },
-            backgroundColor: "rgba(255,255,255,0.97)",
-            duration: 0.6
-        });*/
 
         document.querySelectorAll('.project-item').forEach(item => {
         });
