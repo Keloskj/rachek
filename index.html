@@ -85,7 +85,7 @@
         }
 
 /* Allineamento specifico per le colonne */
-        .header .logo {
+        /* .header .logo {
             text-align: left;
             justify-content: flex-start;
             padding-left: 0rem;
@@ -121,6 +121,25 @@
             font-weight: 500;
             font-size: 3rem;
             z-index: 101;
+        } */
+
+        .header .section {
+            display: flex;
+            text-align: right;
+            gap: 0.7rem; /* Spaziatura */
+            justify-content: flex-end; 
+            padding-right: 0rem;
+            width: 100%;
+            font-size: 3rem;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 101;
+        }
+
+        .header .section a {
+            position: relative;
+            color: #000000 !important;
+            text-decoration: none;
         }
 
         .header-bottom-left {
@@ -284,9 +303,10 @@
         <header>
             <div class="header">
                 <div class="logo">Rachele Tozzini</div>
-                <div class="work">Work</div>
-                <div class="info">Info</div>
-                <div class="contact">Contact</div>
+                <div class="section">
+                    <a href="#">Work</a>
+                    <a href="#">Info</a>
+                    <a href="#">Contact</a>
             </div>
         <header>
     
