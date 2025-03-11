@@ -425,6 +425,12 @@
         });
         animate();
 
+        if ('ontouchstart' in window) {
+            cursor.style.display = 'none';
+            follower.style.display = 'none';
+            document.body.style.cursor = 'auto';
+        }
+
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.querySelector('.splash').classList.add('hide');
