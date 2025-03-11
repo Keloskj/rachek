@@ -240,42 +240,33 @@
         .cursor-container {
             filter: url(#goo);
             position: fixed;
-            pointer-events: none;
             z-index: 9999;
+            transform: translate(0px, -100px);
         }
         
         .cursor {
             position: fixed;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: #ff6b6b;
             pointer-events: none;
             mix-blend-mode: difference;
             transform: translate(-50%, -50%);
-            transition: 
-                width 0.3s ease,
-                height 0.3s ease,
-                background 0.3s ease;
-            filter: url(#goo);
             z-index: 9999;
         }
 
         .cursor-follower {
             position: fixed;
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 107, 107, 0.4);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            transition: 
-                all 0.1s ease-out,
-                width 0.3s ease,
-                height 0.3s ease;
         }
 
-       /*  .cursor.active {
+       .cursor.active {
             width: 60px;
             height: 60px;
             background: #4ecdc4;
@@ -284,7 +275,7 @@
         .cursor-follower.active {
             width: 40px;
             height: 40px;
-        } */
+        }
 
     </style>
 </head>
@@ -292,7 +283,7 @@
       <!-- SVG Filter per cursore -->
     <svg style="position: absolute; width: 0; height: 0;">
         <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
             <feColorMatrix in="blur" mode="matrix" values="
                     1 0 0 0 0  
                     0 1 0 0 0  
