@@ -368,49 +368,62 @@
     <img src="homepersito.png" class="scroll-indicator" alt="Scroll indicator">
     
     <script>
-        // Animazione cursore
-        const cursor = document.querySelector('.cursor');
+      // Animazione cursore
+        const cursor = document.querySelector('.liquid-cursor');
         const follower = document.querySelector('.cursor-follower');
-        let posX = 0, posY = 0;
-        let mouseX = 0, mouseY = 0;
+        let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
-        function updateCursor() {
-            posX += (mouseX - posX) * 0.5;
-            posY += (mouseY - posY) * 0.5;
-
-            cursor.style.left = posX + 'px';
-            cursor.style.top = posY + 'px';
-            
-            follower.style.left = posX + 'px';
-            follower.style.top = posY + 'px';
-
-            requestAnimationFrame(updateCursor);
-        }
-
+        // Rileva movimento del mouse
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
 
-        document.querySelectorAll('a, .project-item').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                cursor.classList.add('active');
-                follower.classList.add('active');
+        // Variabili globali per l'interpolazione
+        let currentAngle = 0;
+        let currentScaleX = 1;
+        let currentScaleY = 1;
+
+        // Animazione fluida
+        function animate() {
+            // Calcola la velocità
+            const deltaX = mouseX - posX;
+            const deltaY = mouseY - posY;
+            const velocity = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    
+            // Aggiorna posizione con effetto molla
+            posX += deltaX * 0.15;
+            posY += deltaY * 0.15;
+
+            // Calcola l'angolo in gradi
+            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+    
+            // Applica trasformazioni al cursore
+            cursor.style.left = posX + 'px';
+            cursor.style.top = posY + 'px';
+            cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+    
+            // Animazione dello sfollower
+            follower.style.left = posX + 'px';
+            follower.style.top = posY + 'px';
+            follower.style.transition = `all ${0.3 + velocity * 0.002}s ease-out`;
+    
+            requestAnimationFrame(animate);
+        }
+
+        // Interazioni hover
+        document.querySelectorAll('a, button, input, [hover-effect]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                cursor.style.background = '#ff69b4'; // Cambia colore all'hover
             });
-            
-            link.addEventListener('mouseleave', () => {
-                cursor.classList.remove('active');
-                follower.classList.remove('active');
+    
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.background = '#00a8ff';
             });
         });
-
-        updateCursor();
-
-        if ('ontouchstart' in window) {
-            cursor.style.display = 'none';
-            follower.style.display = 'none';
-            document.body.style.cursor = 'auto';
-        }
+        animate();
 
         window.addEventListener('load', () => {
             setTimeout(() => {
