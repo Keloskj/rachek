@@ -449,7 +449,7 @@
         }
 
         // Interazioni hover
-        document.querySelectorAll('a, button, input, [hover-effect]').forEach(el => {
+      /*  document.querySelectorAll('a, button, input, [hover-effect]').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
                 cursor.style.background = '#ff69b4'; // Cambia colore all'hover
@@ -458,6 +458,18 @@
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(1)';
                 cursor.style.background = '#00a8ff';
+            });
+        }); */
+
+        document.querySelectorAll('a, .project-item').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                follower.classList.add('active');
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                follower.classList.remove('active');
             });
         });
         
