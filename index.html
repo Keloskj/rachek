@@ -64,6 +64,19 @@
             top: 25px;
         }
 
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw; /* Copre l'intera larghezza della viewport */
+            height: 150px; /* Altezza della sfumatura */
+            background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+            z-index: 99;
+            pointer-events: none; /* Permette di interagire con gli elementi sottostanti */
+        }
+
         .header div {
             display: flex;
             align-items: center;
