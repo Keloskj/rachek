@@ -237,6 +237,13 @@
 }
         
 
+        .cursor-container {
+            filter: url(#goo);
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
         .cursor {
             position: fixed;
             width: 40px;
@@ -353,8 +360,10 @@
         </defs>
     </svg>
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="cursor-container">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
