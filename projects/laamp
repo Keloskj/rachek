@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dettagli Progetto LAAMP</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    header {
+      padding: 1rem;
+      background: #f7f7f7;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .gallery {
+      margin-top: 80px; /* offset per l'header fisso */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: calc(33% - 10px);
+      height: auto;
+      border: 2px solid #ccc;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
 
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">&larr; Torna alla Home</a>
+  </header>
+  
+  <div class="gallery">
+    <!-- Inserisci qui le immagini del progetto -->
+    <img src="laamp1.jpg" alt="Dettaglio 1">
+    <img src="laamp2.jpg" alt="Dettaglio 2">
+    <img src="laamp3.jpg" alt="Dettaglio 3">
+    <!-- Aggiungi ulteriori immagini secondo necessità -->
+  </div>
+</body>
+</html>
