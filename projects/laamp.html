@@ -9,45 +9,6 @@
     .main-content {
             opacity: 1;
     }
-    
-     .cursor-container {
-            filter: url(#goo);
-            position: fixed;
-            z-index: 9999;
-            transform: translate(0px, -0px);
-        }
-        
-        .cursor {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: black;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 25px;
-            height: 25px;
-            background: black;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-        }
-
-       .cursor.active {
-            width: 45px;
-            height: 45px;
-            background: black;
-        }
-
-        .cursor-follower.active {
-            width: 30px;
-            height: 30px;
-        }
   </style>
 </head>
   <body>
@@ -77,9 +38,9 @@
                     <a href="#">Work</a>
                     <a href="#">Info</a>
                     <a href="#">Contact</a>
+                </div>
             </div>
         </header>
-    </div>
 
 <div class="header-bottom-left">LAAMP</div>
 
@@ -95,6 +56,8 @@
                 <div class="project-info"></div>
                 <h3 class="project-title">LAAMP </h3>
             </div>
+
+      
       </main>
   </div>
 
@@ -110,7 +73,7 @@
             document.body.style.cursor = 'auto';
         }
 
-        window.addEventListener('load', () => {
+        /*window.addEventListener('load', () => {
             setTimeout(() => {
                 document.querySelector('.splash').classList.add('hide');
                 document.querySelector('.main-content').classList.add('loaded');
@@ -119,10 +82,10 @@
                     document.querySelector('.splash').remove();
                 });
             }, 1000);
-        });
+        });*/
 
 
-        document.querySelectorAll('.project-item').forEach(item => {
+        /*document.querySelectorAll('.project-item').forEach(item => {
         });
 
         const videos = document.querySelectorAll('video.project-image');
@@ -130,7 +93,7 @@
             video.addEventListener('click', () => {
                 video.muted = !video.muted;
             });
-        });
+        });*/
         
         // Scroll indicator
         const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -149,19 +112,19 @@
         });
 
        // container cliccabili 
-        function handleProjectClick(event) {
+        /*function handleProjectClick(event) {
     const project = event.currentTarget;
-    const title = project.querySelector('.project-title').textContent.trim();
+    const title = project.querySelector('.project-title').textContent.trim();*/
                 
 
                 // Esempio di navigazione - personalizza con i tuoi URL
-    const projectUrls = {
+    /*const projectUrls = {
         'LAAMP': 'projects/laamp.html',
         'panKa': 'projects/panka.html',
         'LOGOS': 'projects/logos.html',
         'PACHA-MAMA': 'projects/pachamama.html',
         'GAIA': 'projects/gaia.html'
-    };
+    };*/
 
     setTimeout(() => {
         window.location.href = projectUrls[title] || '#';
@@ -169,8 +132,8 @@
 }
 
 // Aggiungi gli event listener
-document.querySelectorAll('.project-container').forEach(container => {
-    container.addEventListener('click', handleProjectClick);
+   /*document.querySelectorAll('.project-container').forEach(container => {
+    container.addEventListener('click', handleProjectClick);*/
     
     // Aggiorna l'hover del cursore
     container.addEventListener('mouseenter', () => {
