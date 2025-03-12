@@ -178,13 +178,14 @@ body {
 }
 
 .project-text-body {
-        padding: 0rem 2rem 2rem 2rem;
         font-size: 0.5rem;
         font-weight: 400rem;
         line-height: 1.5;
         text-align: justify;
-        word-spacing: 0.05em; /* Regola lo spazio tra le parole */
+        max-width: 100%;
+        white-space: normal;
         hyphens: none; /* Sillabazione disattivata */
+        word-spacing: 0.05em; /* Regola lo spazio tra le parole */
 }
 
 .project-item {
