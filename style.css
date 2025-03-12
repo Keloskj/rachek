@@ -191,14 +191,12 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Due colonne di uguale larghezza */
         gap: 2rem;
-        padding: 2rem;
 }
 
 .img-row-a {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Tre colonne di uguale larghezza */
         gap: 2rem;
-        padding: 2rem;
 }
         
 .img-row img {
