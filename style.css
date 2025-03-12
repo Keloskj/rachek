@@ -147,6 +147,16 @@ body {
         margin-bottom: 60px; /* Spazio per il testo in basso */
 }
 
+.project-container-video {
+        /*transform: translate(0vh, 2vh);*/
+        width: 100%;
+        height: 99%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        padding: 0rem;
+}
+
 .project-container-head {
         /*transform: translate(0vh, 2vh);*/
         width: 100%;
