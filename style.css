@@ -201,6 +201,7 @@
              /* 5. Cursor Styles */
         body {
             cursor: none;
+                background: #ffffff;
         }
 
         /* scrollbar */
