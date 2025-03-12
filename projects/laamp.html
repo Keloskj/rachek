@@ -6,7 +6,44 @@
   <title>RT Art&Design</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    
+     .cursor-container {
+            filter: url(#goo);
+            position: fixed;
+            z-index: 9999;
+            transform: translate(0px, -100px);
+        }
+        
+        .cursor {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: black;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            background: black;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+       .cursor.active {
+            width: 45px;
+            height: 45px;
+            background: black;
+        }
+
+        .cursor-follower.active {
+            width: 30px;
+            height: 30px;
+        }
   </style>
 </head>
   <body>
