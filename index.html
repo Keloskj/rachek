@@ -432,17 +432,11 @@
             }, 700);
         });
 
+       // container cliccabili 
         function handleProjectClick(event) {
     const project = event.currentTarget;
     const title = project.querySelector('.project-title').textContent.trim();
                 
-            // Animazione al click
-            gsap.to(project, {
-                scale: 0.95,
-                duration: 0.3,
-                yoyo: true,
-                repeat: 1
-            });
 
                 // Esempio di navigazione - personalizza con i tuoi URL
     const projectUrls = {
