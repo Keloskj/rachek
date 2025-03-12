@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RT Art&Design</title>
-    <style>
-        /* 1. Splash Screen */
+/* 1. Splash Screen */
         .splash {
             position: fixed;
             top: 0;
