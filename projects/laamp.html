@@ -129,23 +129,7 @@
     setTimeout(() => {
         window.location.href = projectUrls[title] || '#';
     }, 300);
-}
 
-// Aggiungi gli event listener
-   document.querySelectorAll('.project-container').forEach(container => {
-    container.addEventListener('click', handleProjectClick);
-    
-    // Aggiorna l'hover del cursore
-    container.addEventListener('mouseenter', () => {
-        cursor.classList.add('active');
-        follower.classList.add('active');
-    });
-    
-    container.addEventListener('mouseleave', () => {
-        cursor.classList.remove('active');
-        follower.classList.remove('active');
-    });
-});
 
         // Animazione cursore
         const cursor = document.querySelector('.cursor');
@@ -203,6 +187,22 @@
         });
         
         animate();
+   
+   // Aggiungi gli event listener
+   document.querySelectorAll('.project-container').forEach(container => {
+     container.addEventListener('click', handleProjectClick);
+     
+     // Aggiorna l'hover del cursore
+     container.addEventListener('mouseenter', () => {
+       cursor.classList.add('active');
+       follower.classList.add('active');
+     });
+     
+     container.addEventListener('mouseleave', () => {
+       cursor.classList.remove('active');
+       follower.classList.remove('active');
+     });
+});
     </script>
 </body>
 </html>
