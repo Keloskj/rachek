@@ -97,6 +97,11 @@ body {
         cursor: none;
 }
 
+.home-link {
+    text-decoration: none;
+    color: black;
+}
+
 .header .section {
         display: flex;
         text-align: right;
