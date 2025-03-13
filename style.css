@@ -135,7 +135,6 @@ body {
         z-index: 100;
         bottom: 35px;
         height: 40px;
-        z-index: 98;
 }
        
 .main {
@@ -199,6 +198,7 @@ body {
         white-space: normal;
         hyphens: none; /* Sillabazione disattivata */
         word-spacing: 0.05em; /* Regola lo spazio tra le parole */
+        margin: 1rem 0rem;
 }
 
 .project-info {
