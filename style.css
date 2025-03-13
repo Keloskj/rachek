@@ -45,6 +45,7 @@ body {
 .main-content {
         opacity: 0;
         transition: opacity 0.8s ease;
+        cursor: none;
 }
 
 .main-content.loaded {
