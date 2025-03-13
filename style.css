@@ -185,6 +185,7 @@ body {
         overflow: hidden;
         white-space: nowrap;
         position: relative;
+        border-radius: 0.3rem;
 }
 
 .body-container-text {
