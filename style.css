@@ -219,9 +219,9 @@ body {
         gap: 2rem;
 }
 
-.img-row-a {
+.img-row .img-row-h {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Tre colonne di uguale larghezza */
+        grid-template-columns: repeat(2, 1fr); /* Due colonne di uguale larghezza */
         gap: 2rem;
 }
         
