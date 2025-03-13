@@ -135,6 +135,17 @@
      follower.style.display = 'none';
      document.body.style.cursor = 'auto';
    }
+
+    //video player script
+   document.querySelectorAll('.project-item').forEach(item => {
+        });
+
+        const videos = document.querySelectorAll('video.project-image');
+        videos.forEach(video => {
+            video.addEventListener('click', () => {
+                video.muted = !video.muted;
+            });
+        });
    
    // Scroll indicator
    const scrollIndicator = document.querySelector('.scroll-indicator');
