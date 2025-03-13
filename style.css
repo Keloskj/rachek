@@ -293,17 +293,25 @@ body {
 
 /* scrollbar */
 ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+    width: 8px; /* Larghezza della scrollbar verticale */
+    height: 8px; /* Altezza della scrollbar orizzontale */
+    background: transparent; /* Sfondo trasparente */
 }
-        
-::-webkit-scrollbar-track {
-        background: #ffffff;
-}
-        
+
+/* Stile della "maniglia" */
 ::-webkit-scrollbar-thumb {
-        background: #000000;
-        border-radius: 4px;
+    background: black; /* Colore della barra di scorrimento */
+    border-radius: 10px; /* Bordo stondato */
+}
+
+/* Nascondere lo sfondo della scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent; /* Sfondo trasparente */
+}
+
+/* Quando passi sopra la scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8); /* Nero leggermente più visibile */
 }
         
         /* scroll-indicator */
