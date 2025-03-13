@@ -223,6 +223,7 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Due colonne di uguale larghezza */
         gap: 2rem;
+        max-height: 27rem;
 }
         
 .img-row img {
