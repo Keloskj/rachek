@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Art&Design</title>
+  <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    .main-content {
+      opacity: 1;
+    }
+  </style>
+</head>
+  <body>
+    <!-- SVG Filter per cursore -->
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="
+          1 0 0 0 0  
+          0 1 0 0 0  
+          0 0 1 0 0  
+          0 0 0 16 -6"/>
+      </filter>
+    </svg>
+    
+    <div class="cursor-container">
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
+    </div>
+    
+    <!-- Header -->
+    <div class="main-content">
+      
+      <header>
+        <div class="header">
+          <div class="logo">
+            <a href="../index.html" class="home-link">Rachele Tozzini</a>
+          </div>
+          <div class="section">
+            <a href="#">Work</a>
+            <a href="#">Info</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </header>
+      
+      <div class="header-bottom-left">LAAMP</div>
+      
+      <main>
+        <div class="projects-grid">
+          <div class="head-container">
+            <img src="../laamp still sfondobianco.jpg" alt="LAAMP" class="project-image-head">
+          </div>
+        </div>
+        
+        <div class="body-container-text">
+          <div class="text-body">
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+            <p><br />
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+          </div>
+        </div>
+        
+        <div class="body-container-media">
+          <div class="img-row">
+            <img src="../dettlaamp1.jpg" alt="Anteprima 1">
+            <img src="../Dett laamp2.jpg" alt="Anteprima 2">
+          </div>
+        </div>
+        
+        <div class="body-container-media">
+          <img src="../disegnilaamp.jpg" alt="LAAMP" class="project-image">
+          <div class="project-info"></div>
+        </div>
+        
+        <div class="body-container-text">
+          <div class="text-body">
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+            <p><br />
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+          </div>
+        </div>
+        
+        <div class="body-container-media">
+          <div class="img-row">
+            <img src="../prove laamp(1).jpg" alt="Anteprima 1">
+            <img src="../prove laamp(2).jpg" alt="Anteprima 2">
+          </div>
+        </div>
+        
+        <div class="body-container-text">
+          <div class="text-body">
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+            <p><br />
+            <p>Testo segnaposto in attesa di contenuto definitivo. Questo spazio verrà aggiornato con il testo finale non appena disponibile.
+              Nel frattempo, puoi considerare questo testo come un riferimento temporaneo. Una volta definito il contenuto definitivo, verrà inserito qui al posto di questo segnaposto.
+              Resta sintonizzato per gli aggiornamenti!
+            </p>
+          </div>
+        </div>
+        
+        <div class="body-container-media">
+          <img src="../ambient laamp cornice.jpg" alt="LAAMP" class="project-image">
+          <div class="project-info"></div>
+        </div>
+         <div class="body-container-media">
+          <img src="../LAAMP (still).jpg" alt="LAAMP" class="project-image">
+          <div class="project-info"></div>
+        </div>
+      
+      </main>
+</div>
+    
+    <img src="../work per sito.png" class="scroll-indicator" alt="Scroll indicator">
+      
+ <script>
+   
+   if ('ontouchstart' in window) {
+     cursor.style.display = 'none';
+     follower.style.display = 'none';
+     document.body.style.cursor = 'auto';
+   }
+   
+   // Scroll indicator
+   const scrollIndicator = document.querySelector('.scroll-indicator');
+   let scrollTimeout;
+   
+   window.addEventListener('wheel', () => {
+     scrollIndicator.classList.add('visible');
+     
+     clearTimeout(scrollTimeout); /* Resetta il timeout ogni volta che c'è nuovo scroll */
+     
+     scrollTimeout = setTimeout(() => { /* Nascondi l'indicatore dopo "x" secondi dall'ultimo scroll */
+       scrollIndicator.classList.remove('visible');
+     }, 700);
+   });
+   
+   setTimeout(() => {
+     window.location.href = projectUrls[title] || '#';
+   }, 300);
+   
+   // Animazione cursore
+   const cursor = document.querySelector('.cursor');
+   const follower = document.querySelector('.cursor-follower');
+   let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
+  
+   document.addEventListener('mousemove', (e) => { /* Rileva movimento del mouse */
+     mouseX = e.clientX;
+     mouseY = e.clientY;
+   });
+   
+   let currentAngle = 0; /* Variabili globali per l'interpolazione */
+   let currentScaleX = 1; /* Variabili globali per l'interpolazione */
+   let currentScaleY = 1; /* Variabili globali per l'interpolazione */
+   
+   function animate() {  /* Animazione fluida */
+     const deltaX = mouseX - posX;
+     const deltaY = mouseY - posY;
+     const velocity = Math.sqrt(deltaX * deltaX + deltaY * deltaY); /* Calcola la velocità */
+     
+     posX += deltaX * 0.15; /* Aggiorna posizione con effetto molla */
+     posY += deltaY * 0.15; /* Aggiorna posizione con effetto molla */
+     
+     const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI); /* Calcola l'angolo in gradi */
+     
+     /* Applica trasformazioni al cursore */
+     cursor.style.left = posX + 'px';
+     cursor.style.top = posY + 'px';
+     cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+     
+     // Animazione dello sfollower
+     follower.style.left = posX + 'px';
+     follower.style.top = posY + 'px';
+     follower.style.transition = `all ${0.3 + velocity * 0.002}s ease-out`;
+     
+     requestAnimationFrame(animate);
+   }
+   
+   document.querySelectorAll('a, .project-item').forEach(link => {
+     link.addEventListener('mouseenter', () => {
+       cursor.classList.add('active');
+       follower.classList.add('active');
+     });
+     
+     link.addEventListener('mouseleave', () => {
+       cursor.classList.remove('active');
+       follower.classList.remove('active');
+     });
+   });
+   
+   animate();
+   
+   // Aggiungi gli event listener
+   document.querySelectorAll('.project-container').forEach(container => {
+     container.addEventListener('click', handleProjectClick);
+     
+     // Aggiorna l'hover del cursore
+     container.addEventListener('mouseenter', () => {
+       cursor.classList.add('active');
+       follower.classList.add('active');
+     });
+     
+     container.addEventListener('mouseleave', () => {
+       cursor.classList.remove('active');
+       follower.classList.remove('active');
+     });
+   });
+ </script>
+  </body>
+</html>
