@@ -226,14 +226,14 @@ body {
         object-fit: cover;
 }
 
-.img-row .img-row-h {
+.img-row-h {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Due colonne di uguale larghezza */
         gap: 2rem;
         max-height: 27rem;
 }
 
-.img-row .img-row-h img {
+.img-row-h img {
         width: 100%;
         border-radius: 0.3rem;
         object-fit: cover;
