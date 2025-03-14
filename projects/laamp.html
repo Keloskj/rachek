@@ -233,43 +233,6 @@
        follower.classList.remove('active');
      });
    });
-
-// Dopo aver trovato il progetto corrente
-const currentIndex = data.projects.findIndex(p => p.id === projectId);
-const prevProject = data.projects[currentIndex - 1];
-const nextProject = data.projects[currentIndex + 1];
-
-// Aggiorna i link di navigazione
-const updateNavigation = () => {
-    const prevLink = document.querySelector('.prev-project');
-    const nextLink = document.querySelector('.next-project');
-    
-    if(prevProject) {
-        prevLink.href = `detail.html?project=${prevProject.id}`;
-        prevLink.querySelector('.project-title').textContent = prevProject.title;
-    } else {
-        prevLink.style.visibility = 'hidden';
-    }
-    
-    if(nextProject) {
-        nextLink.href = `detail.html?project=${nextProject.id}`;
-        nextLink.querySelector('.project-title').textContent = nextProject.title;
-    } else {
-        nextLink.style.visibility = 'hidden';
-    }
-};
-
-updateNavigation();
-
-// Aggiungi navigazione da tastiera
-document.addEventListener('keydown', (e) => {
-    if(e.key === 'ArrowLeft' && prevProject) {
-        window.location.href = `detail.html?project=${prevProject.id}`;
-    }
-    if(e.key === 'ArrowRight' && nextProject) {
-        window.location.href = `detail.html?project=${nextProject.id}`;
-    }
-});
    
  </script>
   </body>
