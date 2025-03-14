@@ -133,8 +133,15 @@
 
        // container cliccabili 
         function handleProjectClick(event) {
-    const project = event.currentTarget;
-    const title = project.querySelector('.project-title').textContent.trim();
+            const project = event.currentTarget;
+            const title = project.querySelector('.project-title').textContent.trim();
+            const projectId = project.dataset.project;
+
+          // Animazione al click
+    project.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+        project.style.transform = 'scale(1)';
+    }, 200);  
                 
 
                 // Esempio di navigazione - personalizza con i tuoi URL
@@ -146,9 +153,11 @@
         'GAIA': 'projects/gaia.html'
     };
 
+
+            
     setTimeout(() => {
-        window.location.href = projectUrls[title] || '#';
-    }, 300);
+        window.location.href = projectUrls[projectId];
+    }
 }
 
 // Aggiungi gli event listener
@@ -223,6 +232,7 @@ document.querySelectorAll('.body-container-media').forEach(container => {
         });
         
         animate();
+        
     </script>
   </body>
 </html>
